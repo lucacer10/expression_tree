@@ -33,64 +33,6 @@ Também é possível passar a expressão direto pela entrada padrão:
 echo "2 * (3 + 4) - 5" | cargo run
 ```
 
-## Exemplos
-
-### Precedência
-
-```
-Digite uma expressão: 2 * (3 + 4) - 5
-
-Forma legível:
-2 * (3 + 4) - 5
-
-Árvore sintática:
-└── -
-    ├── *
-    │   ├── 2
-    │   └── +
-    │       ├── 3
-    │       └── 4
-    └── 5
-
-Resultado: 9
-```
-
-### Negação e parênteses redundantes
-
-Parênteses desnecessários são removidos na forma legível; os necessários são mantidos.
-
-```
-Digite uma expressão: ((1 - (2 - 3))) * -4
-
-Forma legível:
-(1 - (2 - 3)) * -4
-
-Árvore sintática:
-└── *
-    ├── -
-    │   ├── 1
-    │   └── -
-    │       ├── 2
-    │       └── 3
-    └── - (Neg)
-        └── 4
-
-Resultado: -8
-```
-
-### Erros
-
-```
-Digite uma expressão: 10 / 0
-...
-Erro ao avaliar a expressão
-```
-
-```
-Digite uma expressão: 2 +
-Erro: Token inesperado: None
-```
-
 ## Como funciona
 
 ### 1. Representação: a árvore
@@ -144,18 +86,3 @@ expression_tree/
     └── exemplo.rs   # rascunho antigo, não é compilado pelo Cargo
 ```
 
-## Limitações
-
-- Apenas números inteiros (`i64`); não há suporte a decimais
-- Sem variáveis nem funções (como `x` ou `sqrt`)
-- A divisão é inteira (`7 / 2 = 3`)
-- Lê uma expressão por execução
-
-## Ideias para evoluir
-
-- Suporte a números decimais (`f64`)
-- Variáveis e atribuição (`x = 3`, `x * 2`)
-- Potenciação (`^`), com associatividade à direita
-- Modo interativo (REPL) para várias expressões seguidas
-- Mensagens de erro indicando a posição do problema na entrada
-- Testes automatizados com `cargo test`
