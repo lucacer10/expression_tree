@@ -89,4 +89,4 @@ expression_tree/
 
 ## Referências
 
-- O código foi revisado e corrigido com auxílio do [Claude](https://claude.ai) (Anthropic), e este README foi escrito com a mesma ferramenta.
+- Este README foi escrito pelo [Claude](https://claude.ai) (Anthropic).
