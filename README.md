@@ -86,3 +86,7 @@ expression_tree/
     └── exemplo.rs   # rascunho antigo, não é compilado pelo Cargo
 ```
 
+
+## Referências
+
+- O código foi revisado e corrigido com auxílio do [Claude](https://claude.ai) (Anthropic), e este README foi escrito com a mesma ferramenta.
